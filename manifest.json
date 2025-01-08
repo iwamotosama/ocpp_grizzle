@@ -13,7 +13,7 @@
     "@iwamotosama"
   ],
   "requirements": [
-    "ocpp>=0.14.1",
+    "ocpp==0.14.1",
     "websockets>=10.2"
   ]
 }
