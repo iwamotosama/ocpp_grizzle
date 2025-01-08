@@ -12,7 +12,8 @@ import time
 
 from homeassistant.components.persistent_notification import DOMAIN as PN_DOMAIN
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OK, STATE_UNAVAILABLE, TIME_MINUTES
+from homeassistant.const import STATE_OK, STATE_UNAVAILABLE#, TIME_MINUTES
+from homeassistant.const import UnitOfTime
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import device_registry, entity_component, entity_registry
 import homeassistant.helpers.config_validation as cv
@@ -102,6 +103,7 @@ from .enums import (
     Profiles as prof,
 )
 
+TIME_MINUTES = UnitOfTime.MINUTES
 _LOGGER: logging.Logger = logging.getLogger(__package__)
 logging.getLogger(DOMAIN).setLevel(logging.INFO)
 # Uncomment these when Debugging
