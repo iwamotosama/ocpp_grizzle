@@ -86,8 +86,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         config_entry_id=entry.entry_id,
         identifiers={(DOMAIN, entry.data.get(CONF_CPID, DEFAULT_CPID))},
         name=entry.data.get(CONF_CPID, DEFAULT_CPID),
-        default_model="OCPP Charge Point",
-        via_device=((DOMAIN), central_sys.id),
+        model="OCPP Charge Point",
+        via_device=(DOMAIN, entry.data.get(CONF_CSID, DEFAULT_CSID)),
     )
 
     hass.data[DOMAIN][entry.entry_id] = central_sys
