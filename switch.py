@@ -9,7 +9,7 @@ from homeassistant.components.switch import (
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.const import POWER_KILO_WATT
+import homeassistant.const as ha
 from homeassistant.helpers.entity import DeviceInfo
 
 from ocpp.v16.enums import ChargePointStatus, Measurand
@@ -150,7 +150,7 @@ class ChargePointSwitch(SwitchEntity):
                 self.central_system.get_ha_unit(
                     self.cp_id, Measurand.power_active_import.value
                 )
-                == POWER_KILO_WATT
+                == ha.UnitOfPower.KILO_WATT
             ):
                 value = value * 1000
             return value
