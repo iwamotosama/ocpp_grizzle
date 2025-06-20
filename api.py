@@ -183,7 +183,7 @@ class CentralSystem:
         """Create instance and start listening for OCPP connections on given port."""
         self = CentralSystem(hass, entry)
 
-        server = await websockets.server.serve(
+        server = await websockets.serve(
             self.on_connect,
             self.host,
             self.port,
